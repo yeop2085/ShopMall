@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WorkerDAO">
+	
+	<!-- parameterType : 입력되는거 id,  resultType : 반환되는 거 : pwd -->
+	<select id = "workerCheck" resultType="String" parameterType="String">
+		SELECT pwd 
+		FROM worker 
+		WHERE id = #{id}
+	</select>
+	
+	<!-- parameterType : 입력되는거 id,  resultType : 반환되는 거 : * 모든거 -->
+	<select id = "getEmployee" resultType="worker" parameterType="String">
+		SELECT * 
+		FROM worker
+		WHERE id = #{id}
+	</select>
+	 
+</mapper>
